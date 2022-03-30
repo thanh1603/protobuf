@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.example.serviceWebfront;
+
+option java_multiple_files = true;
+option java_package = "com.example.serviceWebfront";
+
+service ThanhTestService {
+  rpc thanhTest(ThanhRequest) returns (ThanhResponse) {
+  }
+
+  rpc thanhTest1(ThanhRequest) returns (ThanhResponse) {
+  }
+
+}
+
+message ThanhRequest {
+  string message = 1;
+}
+
+message ThanhResponse {
+  string message = 1;
+}

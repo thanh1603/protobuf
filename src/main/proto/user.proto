@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package com.example.serviceUser;
+
+option java_multiple_files = true;
+option java_package = "com.example.serviceUser";
+
+service UserService {
+  rpc createUser(UserRequest) returns (UserResponse) {
+  }
+
+  rpc loginUser(UserRequestLogin) returns (UserResponseLogin) {
+  }
+
+  rpc updateUser(UpdateUserRequest) returns (UpdateUserResponse) {
+  }
+
+  rpc updateUserPost(UpdateUserPostRequest) returns (UpdateUserPostResponse) {
+
+  }
+
+
+}
+message ReUser{
+  string name = 1;
+  string email = 2;
+  string password = 3;
+
+}
+
+message UserRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message UserResponse {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string message = 4;
+}
+
+message UserRequestLogin{
+  string name =1;
+  string password = 2;
+}
+message UserResponseLogin{
+  string id = 1;
+  string name =2;
+  string jwt = 3;
+  string password = 4;
+  string message = 5;
+}
+
+message UpdateUserRequest{
+  string id = 1;
+  string name =2;
+  string password = 3;
+  string email = 4;
+}
+
+message UpdateUserResponse{
+  string name =1;
+  string password = 2;
+  string message = 3;
+  string email = 4;
+}
+
+
+message UpdateUserPostRequest {
+  string idPost =1;
+  string idUser =2;
+}
+message UpdateUserPostResponse {
+  string idPost =1;
+  string idUser =2;
+  string message =3;
+}
