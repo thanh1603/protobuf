@@ -10,6 +10,9 @@ service PostService {
   rpc createPost(createPostRequest) returns (createPostResponse){
 
   }
+  rpc updatePost(updatePostRequest) returns (updatePostResponse){
+
+  }
 }
 
 message createPostRequest {
@@ -18,6 +21,21 @@ message createPostRequest {
   string content = 3;
 }
 message createPostResponse {
+  string idPost = 1;
+  string userId =2;
+  string title = 3;
+  string content =4;
+  string message = 5;
+}
+
+message updatePostRequest {
+  string  userId =1;
+  string title = 2;
+  string content = 3;
+  string idPost = 4;
+
+}
+message updatePostResponse {
   string idPost = 1;
   string userId =2;
   string title = 3;
